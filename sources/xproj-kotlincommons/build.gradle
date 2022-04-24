@@ -1,0 +1,47 @@
+buildscript {
+    apply from: "${rootDir}/../modules/gradle-buildsystem/dependencies.gradle"
+
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath PLG.dependencyUpdates
+        classpath PLG.detekt
+        classpath PLG.gradle
+        classpath PLG.kotlin.gradle
+    }
+}
+
+allprojects {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs += ['-Xlint:deprecation', '-Xlint:unchecked']
+        }
+    }
+}
+
+ext {
+    compileSdkVersion = 31
+    buildToolsVersion = '31.0.0'
+    minSdkVersion = 23
+    targetSdkVersion = 31
+
+    versionCode = 1
+    versionName = '0.1.0'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+apply from: "${rootDir}/../modules/gradle-buildsystem/plugins/dependency-updates.gradle"
+apply from: "${rootDir}/../modules/gradle-buildsystem/plugins/detekt.gradle"

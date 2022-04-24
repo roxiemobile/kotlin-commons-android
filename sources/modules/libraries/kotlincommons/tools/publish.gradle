@@ -1,0 +1,25 @@
+ext {
+    mPackageName = 'Kotlin Commons Library'
+    mPackageDesc = 'A collection of useful utility classes common to different Android projects.'
+
+    mGroupId     = 'com.roxiemobile.android'
+    mArtifactId  = 'kotlin-commons'
+    mVersionName = android.defaultConfig.versionName
+    mPackageType = 'aar'
+
+    mCompanyUrl  = 'https://www.roxiemobile.com'
+    mWebsiteUrl  = 'https://github.com/roxiemobile/kotlin-commons.android'
+    mIssuesUrl   = 'https://github.com/roxiemobile/kotlin-commons.android/issues'
+    mGitRepoUrl  = 'scm:git:https://github.com/roxiemobile/kotlin-commons.android.git'
+
+    mAuthorId    = 'roxiemobile'
+    mAuthorName  = 'Alexander Bragin'
+    mAuthorEmail = 'bragin-av@roxiemobile.com'
+
+    mLicenseName = 'The Apache Software License, Version 2.0'
+    mLicenseUrl  = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+    mAllLicenses = ['Apache-2.0']
+}
+
+// Publish to JitPack.io
+apply from: 'tools/jitpack.gradle'

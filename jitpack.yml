@@ -1,0 +1,5 @@
+# Configuration file for building snapshots and releases with JitPack.io
+jdk:
+  - openjdk11
+before_install:
+  - cd ./sources/xproj-kotlincommons

@@ -1,0 +1,50 @@
+/**
+ * Controlling Android properties of all your modules from the main project
+ * @link http://tools.android.com/tech-docs/new-build-system/tips
+ *
+ * Gradle tips and recipes - Configure project-wide properties
+ * @link https://developer.android.com/studio/build/gradle-tips.html
+ */
+
+// MARK: - Plugins
+
+ext.PLG_VER = [
+        dependencyUpdates: '0.42.0',
+        detekt: '1.20.0',
+        gradle: '7.1.3',
+        kotlin: '1.6.21',
+]
+
+ext.PLG = [
+        dependencyUpdates: "com.github.ben-manes:gradle-versions-plugin:${PLG_VER.dependencyUpdates}",
+        detekt: "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${PLG_VER.detekt}",
+        gradle: "com.android.tools.build:gradle:${PLG_VER.gradle}",
+        kotlin: [
+                gradle: "org.jetbrains.kotlin:kotlin-gradle-plugin:${PLG_VER.kotlin}",
+        ],
+]
+
+// MARK: - Dependencies
+
+ext.DEP_VER = [
+        androidx: [
+                espresso: '3.4.0',
+                junit: '1.1.3',
+        ],
+        junit: '4.13.2',
+        kotlin: PLG_VER.kotlin,
+]
+
+ext.DEP = [
+        androidx: [
+                espresso: [
+                        core: "androidx.test.espresso:espresso-core:${DEP_VER.androidx.espresso}",
+                ],
+                junit: "androidx.test.ext:junit:${DEP_VER.androidx.junit}",
+                junitRunner: "androidx.test.runner.AndroidJUnitRunner",
+        ],
+        junit: "junit:junit:${DEP_VER.junit}",
+        kotlin: [
+                stdlibJdk8: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${DEP_VER.kotlin}",
+        ],
+]
