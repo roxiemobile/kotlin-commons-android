@@ -1,4 +1,4 @@
-rootProject.name = 'KotlinCommons'
+rootProject.name = 'xproj-kotlin-commons'
 
 // MARK: - Build System
 
@@ -8,6 +8,6 @@ project(':gradle-buildsystem').projectDir =
 
 // MARK: - Libraries
 
-include ':kotlincommons'
-project(':kotlincommons').projectDir =
-        new File(settingsDir, '../modules/libraries/kotlincommons')
+include ':kotlin-commons'
+project(':kotlin-commons').projectDir =
+        new File(settingsDir, '../modules/libraries/kotlin-commons')
