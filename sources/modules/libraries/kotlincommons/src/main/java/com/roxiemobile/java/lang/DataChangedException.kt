@@ -1,7 +1,5 @@
 package com.roxiemobile.java.lang
 
-import java.lang.RuntimeException
-
 class DataChangedException: RuntimeException {
 
 // MARK: - Construction
