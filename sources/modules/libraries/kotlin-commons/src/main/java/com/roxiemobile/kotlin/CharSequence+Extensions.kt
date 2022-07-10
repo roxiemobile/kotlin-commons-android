@@ -1,4 +1,4 @@
-@file:Suppress("NOTHING_TO_INLINE", "OPT_IN_IS_NOT_ENABLED", "RedundantVisibilityModifier")
+@file:Suppress("NOTHING_TO_INLINE", "RedundantVisibilityModifier", "unused")
 
 package com.roxiemobile.kotlin
 

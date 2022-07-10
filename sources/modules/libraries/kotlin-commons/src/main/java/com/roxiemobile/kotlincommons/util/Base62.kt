@@ -1,4 +1,4 @@
-@file:Suppress("JoinDeclarationAndAssignment", "MemberVisibilityCanBePrivate", "unused")
+@file:Suppress("MemberVisibilityCanBePrivate")
 
 package com.roxiemobile.kotlincommons.util
 
