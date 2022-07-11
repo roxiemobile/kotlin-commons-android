@@ -1,7 +1,9 @@
+@file:Suppress("unused")
+
 package com.roxiemobile.kotlincommons.data.generator
 
 import com.roxiemobile.java.util.toByteArray
-import com.roxiemobile.kotlin.toHexString
+import com.roxiemobile.kotlin.toHex
 import java.security.MessageDigest
 import java.util.UUID
 
@@ -30,7 +32,7 @@ object RandomIdGenerator {
             .digest(uuidBytes)
 
         val randomId = hash
-            .toHexString(uppercased)
+            .toHex(uppercased)
             .substring(startIndex = 0, endIndex = length.toInt())
 
         return randomId

@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier", "unused")
+
 package com.roxiemobile.java.util
 
 import com.roxiemobile.kotlincommons.util.Base62
@@ -6,7 +8,7 @@ import java.util.UUID
 
 // MARK: - Extensions
 
-fun UUID.toByteArray(): ByteArray {
+public fun UUID.toByteArray(): ByteArray {
     return ByteBuffer
         .allocate(16)
         .putLong(this.mostSignificantBits)
@@ -14,6 +16,6 @@ fun UUID.toByteArray(): ByteArray {
         .array()
 }
 
-fun UUID.toBase62(): String {
+public fun UUID.toBase62(): String {
     return String(Base62.SHARED.encode(toByteArray()))
 }

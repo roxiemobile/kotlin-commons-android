@@ -1,8 +1,10 @@
+@file:Suppress("NOTHING_TO_INLINE", "RedundantVisibilityModifier", "unused")
+
 package com.roxiemobile.kotlin
 
 // MARK: - Extensions
 
-fun ByteArray.toHexString(uppercased: Boolean = false): String {
+public fun ByteArray.toHex(uppercased: Boolean = false): String {
     val builder = StringBuilder(this.size * 2)
 
     val hexAlphabet = when (uppercased) {
@@ -18,6 +20,14 @@ fun ByteArray.toHexString(uppercased: Boolean = false): String {
     }
 
     return builder.toString()
+}
+
+public inline fun ByteArray.toLowerHex(): String {
+    return toHex(uppercased = false)
+}
+
+public inline fun ByteArray.toUpperHex(): String {
+    return toHex(uppercased = true)
 }
 
 // MARK: - Constants
